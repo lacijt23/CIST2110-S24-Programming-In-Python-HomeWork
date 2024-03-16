@@ -1,5 +1,5 @@
 # HW4.py
-# Author:
+# Author: Laci Trull
 
 ### README
 # This file contains buggy functions that you need to fix.

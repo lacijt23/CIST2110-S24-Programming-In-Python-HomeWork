@@ -1,36 +1,39 @@
 # Project1.py
-# Author:
+# Author: Laci Trull
 
+print("Welcome to my quiz game! You will be asked a series of questions about my favorite things and you will need to answer them (A, B, C, or D). Each question is worth 1 point. If you answer incorrectly, no points will be awarded. Good luck!")
 
-# This project is meant to test your ability from everything we have learned so far in class
-# You will need to use variables, if statements, loops, and functions
+# function that creates the quiz minigame
+def quiz_game():
+    # set score to 0
+    score = 0
+    # create array of questions
+    questions = ["What is my favorite color? A) Green B) Purple C) Orange D) Blue ",
+                 "What is my favorite game? A) Minecraft B) Genshin Impact C) Celeste D) Stardew Valley",
+                 "What is my favorite animal? A) Cat B) Elephant C) Giraffe D) Polar Bear ",
+                 "Who is my best friend? A) Luis B) Blake C) Sam D) Alex ",
+                 "Which state have I NOT visited before? A) South Dakota B) New York C) California D) Nebraska "]
+    # array of correct answers choices
+    correct_answer = ["B","C","A","B","D"]
+    valid_answers = ["A","B","C","D"]
+    question_number = 0
+    # for loop that iterates through each question
+    while (question_number < 5):
+        print("Question " + str(question_number + 1) + ": " + questions[question_number])
+        answer = input()
+        if answer == correct_answer[question_number]:
+            print("Correct!")
+            score += 1
+            question_number += 1
+        elif (answer in valid_answers) and not (answer == correct_answer[question_number]):
+            print("Incorrect! The correct answer is " + str(correct_answer[question_number]) + ".")
+            question_number += 1
+        else:
+            print("Invalid input! Please enter A, B, C, or D.")
+    print("Your score is " + str(score) + " out of 5. Thanks for playing!")
 
-# Quiz Game:
-# Create a simple console-based quiz game where the user answers a series of questions.
-# The game should keep track of the user's score and provide feedback based on the answers given.
+def main():
+    quiz_game()
 
-# Write a function that displays a welcome message to the user and explains the rules of the game
-
-# Implement at least 5 questions, each with 4 answer options (a, b, c, d). Each question should be worth 1 point.
-# For each question, display the question and the answer options to the user.
-# Use input() to get the user's answer.
-# Use if or if-else statements to check if the answer is correct.
-# If the answer is correct, display a positive feedback message and add points to the user's score.
-# If the answer is incorrect, display a negative feedback message and provide the correct answer.
-# Score Tracking:
-
-# Keep track of the user's score throughout the game.
-# After all questions have been answered, display the user's total score and a farewell message.
-# Function Utilization:
-
-# Create a function to ask a question and check the answer. This function should accept parameters like the question, options, the correct answer, and return whether the user was correct.
-# an example would be def ask_question(question:str, option_1:str, option_2:str, option_3,:str option_4:str, correct_answer:str)->bool:
-# the return value should be a boolean (True or False) for whether the user was correct
-
-# Create a function to display the final score, which takes the score as a parameter and displays a message.
-# Loops:
-# Use a for or while loop to iterate through the questions.
-# Variable Casting:
-# Ensure that user input is cast and checked appropriately to avoid errors during execution.
-# Error Handling:
-# Implement basic error handling to manage invalid inputs from the user (e.g., an answer other than a, b, c, or d).
+if __name__ == "__main__":
+    main()
