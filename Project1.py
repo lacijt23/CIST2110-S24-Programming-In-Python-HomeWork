@@ -31,9 +31,9 @@ def quiz_game():
         else:
             print("Invalid input! Please enter A, B, C, or D.")
     print("Your score is " + str(score) + " out of 5. Thanks for playing!")
-
+# main function
 def main():
     quiz_game()
-
+# call main function
 if __name__ == "__main__":
     main()
