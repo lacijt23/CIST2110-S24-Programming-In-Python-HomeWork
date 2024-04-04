@@ -16,6 +16,7 @@
 # 5: Missing colon
 # After you fix the function, you should run test.py to make sure that the function is fixed.
 
+import pytest
 
 def add(a: float, b: float) -> float:
     """Add two numbers together
@@ -27,11 +28,11 @@ def add(a: float, b: float) -> float:
     Returns:
         float: the sum of a and b
     """
-    return a - b
+    return a + b
 
 
 # Where is the bug in the buggy function?
-# A:
+# A: The return was a - b, it should be a + b
 
 
 def subtract(a: float, b: float) -> float:
@@ -44,11 +45,10 @@ def subtract(a: float, b: float) -> float:
     Returns:
         float: the difference of a and b
     """
-    return a + b
-
+    return a - b
 
 # Where is the bug in the buggy function?
-# A:
+# A: The return was a + b, it should be a - b
 
 
 def divide(a, b):
@@ -61,11 +61,10 @@ def divide(a, b):
     Returns:
         float: the quotient of a and b
     """
-    return a * b
-
+    return a / b
 
 # Where is the bug in the buggy function?
-# A:
+# A: Used * instead of /
 
 
 def multiply(a: float, b: float) -> float:
@@ -78,11 +77,10 @@ def multiply(a: float, b: float) -> float:
     Returns:
         float: the product of a and b
     """
-    return a / b
-
+    return a * b
 
 # Where is the bug in the buggy function?
-# A:
+# A: Used / instead of *
 
 
 def greet(name: str) -> str:
@@ -94,11 +92,11 @@ def greet(name: str) -> str:
     Returns:
         _type_: the greeting message
     """
-    return "Heloo, " + name + "!"
-
+    return "Hello, " + name + "!"
+print(greet("Doe"))
 
 # Where is the bug in the buggy function?
-# A:
+# A: Misspelled Hello, used Heloo instead
 
 
 def square(num: int) -> int:
@@ -114,7 +112,7 @@ def square(num: int) -> int:
 
 
 # Where is the bug in the buggy function?
-# A:
+# A: Used + instead of **
 
 
 def is_even(num: int) -> bool:
@@ -126,11 +124,11 @@ def is_even(num: int) -> bool:
     Returns:
         bool: True if the number is even, False otherwise
     """
-    return num % 2 == 1
+    return num % 2 == 0
 
 
 # Where is the bug in the buggy function?
-# A:
+# A: Used 1 instead of 0
 
 
 def grade_calculator(score: float) -> str:
@@ -146,7 +144,7 @@ def grade_calculator(score: float) -> str:
         return "A"
     elif 80 <= score < 90:
         return "B"
-    elif 70 <= score < 79:
+    elif 70 <= score <= 79:
         return "C"
     elif 60 <= score < 70:
         return "D"
@@ -155,9 +153,8 @@ def grade_calculator(score: float) -> str:
     else:
         return "Invalid Score"
 
-
 # Where is the bug in the buggy function?
-# A:
+# A: Missing = in the 70 <= score < 79
 
 
 def speed_check(speed: float) -> str:
@@ -172,7 +169,7 @@ def speed_check(speed: float) -> str:
     # Assuming general speed limits: min: 20, max: 70 (in mph)
     if speed < 20:
         return "Too slow"
-    elif 20 <= speed <= 60:
+    elif 20 <= speed <= 70:
         return "Within limit"
     elif speed > 70:
         return "Over speed limit"
@@ -181,7 +178,7 @@ def speed_check(speed: float) -> str:
 
 
 # Where is the bug in the buggy function?
-# A:
+# A: Used 60 instead of 70
 
 
 def is_leap_year(year: int) -> bool:
@@ -194,17 +191,20 @@ def is_leap_year(year: int) -> bool:
         bool: True if the year is a leap year, False otherwise
     """
     if year % 4 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 400 == 0:
-        return True
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
     else:
         return False
+print(is_leap_year(1900))
 
 
 # Where is the bug in the buggy function?
-# A:
+# A: 
 
 
 def main():

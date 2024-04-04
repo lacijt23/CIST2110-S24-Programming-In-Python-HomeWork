@@ -1,7 +1,6 @@
 # HW4_Tests.py
 # Author: Laci Trull
 
-import pytest
 
 
 from HW4 import (
