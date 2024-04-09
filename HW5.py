@@ -1,28 +1,36 @@
 # HW5.py
-# Author:
+# Author: Laci Trull
 
 # This homework assignment tests on list in python
 
 # Question 1: Create a list with 5 of your favorite foods. Print the list
-
+foods = ["ramen", "pancakes", "sushi", "egg rolls", "bacon cheeseburger"]
+print(foods)
 # Question 2: Using the list from question 1, print the first and last element of the list
-
+print(foods[0]) # first element
+print(foods[-1]) # last element
 # Question 3: Using the list from question 1, print the 3rd element of the list
-
+print(foods[2]) # 3rd element
 # Question 4: Using the list from question 1, print the 1st through 3rd elements of the list using list slicing
-
+print(foods[0:3]) # 1st through 3rd elements
 # Question 5: Using the list from question 1, print the last 2 elements of the list using list slicing
-
+print(foods[-2:]) # last 2 elements
 # Question 6: Using the list from question 1, create a for each loop that prints each element of the list
-
+for food in foods:
+    print(food)
 # Question 7: Using the list from question 1, create a for loop that prints each element of the list in reverse order
-
+for food in reversed(foods):
+    print(food) 
 # Question 8: Using the list from question 1, create a for loop that prints each element of the list and its index (hint use the enumerate() function)
-
+for index, food in enumerate(foods):
+    print(index, food)
 # Question 9: Using this list of lists, print the first element of the second list (hint: use indexing)
 list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
+print(list[1][0]) # first element of the second list
 
 # Question 10: Create a function that will take in a list and return the list in reverse order
 # Hint: You can take in a list as a parameter and return a list
 # You can not use the reverse() function
+def reverse_me(input_list):
+    return input_list[::-1]
+print(reverse_me(foods)) # test the function with the foods list 
