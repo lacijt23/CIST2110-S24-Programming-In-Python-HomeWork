@@ -5,7 +5,7 @@
 #   \ \  \___|\ \  \\  \\ \  \\\  \|\  \\_\  \ \  \_|\ \ \  \____   \ \  \          __\_\  \
 #    \ \__\    \ \__\\ _\\ \_______\ \________\ \_______\ \_______\  \ \__\        |\_______\
 #     \|__|     \|__|\|__|\|_______|\|________|\|_______|\|_______|   \|__|        \|_______|
-# Author:
+# Author: Laci Trull
 # CIST2110-Project-3 Library Management System (LMS)
 # Project 3 will implement a library management system (LMS) that will allow users to manage books, users, and a library to manage collection of books and users.
 # The LMS will be menu driven and will allow users to add, delete, and update books and users.
